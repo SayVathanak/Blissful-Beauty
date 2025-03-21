@@ -34,7 +34,7 @@ export async function POST(request) {
 
         const files = formData.getAll('images');
 
-        if (files || files.length === 0) {
+        if (!files || files.length === 0) {
             return NextResponse.json({ success: false, message: 'no files uploaded' })
         }
 

@@ -4,6 +4,7 @@ import { assets } from "@/assets/assets";
 import Image from "next/image";
 import { useAppContext } from "@/context/AppContext";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 const AddProduct = () => {
 
@@ -164,7 +165,7 @@ const AddProduct = () => {
             />
           </div>
         </div>
-        <button type="submit" className="px-8 py-2.5 bg-orange-600 text-white font-medium rounded">
+        <button type="submit" className="px-8 py-2.5 bg-yellow-800/50 text-white font-medium rounded">
           ADD
         </button>
       </form>

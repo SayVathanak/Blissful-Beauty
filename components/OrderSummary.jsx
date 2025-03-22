@@ -45,8 +45,8 @@ const OrderSummary = () => {
         return toast.error('Please select an andress')
       }
 
-      let cartItemsArray = Object.keys(cartItems).map((key) => ({ product: key, quantity: cartItems[key] }))
-      cartItemsArray = cartItemsArray.filter(item => item.quantity > 0)
+      let cartItemsArray = Object.keys(cartItems).map((key)=>({product:key, quantity: cartItems[key]}))
+      cartItemsArray = cartItemsArray.filter(item=>item.quantity>0)
 
       if (cartItemsArray.length === 0) {
         return toast.error("Cart is empty")
@@ -57,13 +57,14 @@ const OrderSummary = () => {
       const { data } = await axios.post('/api/order/create', {
         address: selectedAddress._id,
         items: cartItemsArray
-      }, { headers: { Authorization: `Bearer ${token}` } })
+      }, {
+        headers: {Authorization: `Bearer ${token}`}
+      })
 
       if (data.success) {
         toast.success(data.message)
         setCartItems({})
-        
-        router.push("/order-placed");
+        router.push('/order-placed');
       } else {
         toast.error(data.message)
       }

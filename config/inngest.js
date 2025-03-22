@@ -65,7 +65,7 @@ export const createUserOrder = inngest.createFunction(
         batchEvents: {
             maxSize: 5,
             timeout: '5s'
-        }
+        },
     },
     { event: 'order/created' },
     async ({ events }) => {
@@ -77,7 +77,7 @@ export const createUserOrder = inngest.createFunction(
                 amount: event.data.amount,
                 address: event.data.address,
                 date: event.data.date,
-            }
+            };
         })
 
         await connectDB()

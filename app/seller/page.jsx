@@ -13,7 +13,7 @@ const AddProduct = () => {
   const [files, setFiles] = useState([]);
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
-  const [category, setCategory] = useState('Earphone');
+  const [category, setCategory] = useState('FacialFoam');
   const [price, setPrice] = useState('');
   const [offerPrice, setOfferPrice] = useState('');
 
@@ -53,7 +53,7 @@ const AddProduct = () => {
     } catch (error) {
       toast.error(error.message)
     }
-    
+
   };
 
   return (
@@ -125,13 +125,13 @@ const AddProduct = () => {
               onChange={(e) => setCategory(e.target.value)}
               defaultValue={category}
             >
-              <option value="Earphone">Earphone</option>
-              <option value="Headphone">Headphone</option>
-              <option value="Watch">Watch</option>
-              <option value="Smartphone">Smartphone</option>
-              <option value="Laptop">Laptop</option>
-              <option value="Camera">Camera</option>
-              <option value="Accessories">Accessories</option>
+              <option value="FacialFoam">Facial Foam</option>
+              <option value="Cleansers">Cleansers & Face Wash</option>
+              <option value="Serums">Serums & Treatments</option>
+              <option value="Moisturizers">Moisturizers & Creams</option>
+              <option value="Sunscreen">Sunscreens & Sun Protection</option>
+              <option value="Toners">Toners & Mists</option>
+              <option value="Masks">Face Masks & Exfoliators</option>
             </select>
           </div>
           <div className="flex flex-col gap-1 w-32">

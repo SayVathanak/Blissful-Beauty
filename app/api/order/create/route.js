@@ -11,7 +11,7 @@ export async function POST(request) {
         const { address, items } = await request.json();
 
         if (!address || items.length === 0) {
-            return NextResponse.json({ success: false, message: "Invalid data" })
+            return NextResponse.json({ success: false, message: "Invalid data" });
         }
 
         // Calculate amount using items
@@ -36,7 +36,7 @@ export async function POST(request) {
         user.cartItems = {}
         await user.save()
 
-        return NextResponse.json({ success: true, message: "Order Placed" })
+        return NextResponse.json({ success: true, message: 'Order Placed' })
 
     } catch (error) {
         console.log(error)
